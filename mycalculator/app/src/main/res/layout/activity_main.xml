@@ -8,14 +8,40 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
         <TextView
-            android:id="@+id/resultTextView"
+            android:id="@+id/argument1TextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="end"
+            android:text=""
+            android:textSize="50sp" />
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/operationTextView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="end"
+            android:text=""
+            android:textSize="50sp" />
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/argument2TextView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_gravity="bottom"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="5dp"
@@ -40,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:background="@color/Buttons_color1"
-                android:onClick="buttonClick"
+                android:onClick="numberClick"
                 android:text="7"
                 android:textColor="#ffff"
                 android:textSize="30dp" />
@@ -50,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:background="@color/Buttons_color1"
-                android:onClick="buttonClick"
+                android:onClick="numberClick"
                 android:text="4"
                 android:textColor="#ffff"
                 android:textSize="30dp" />
@@ -61,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:height="80dp"
                 android:background="@color/Buttons_color1"
-                android:onClick="buttonClick"
+                android:onClick="numberClick"
                 android:text="1"
                 android:textColor="#ffff"
                 android:textSize="30dp" />
@@ -70,9 +96,9 @@
                 android:id="@+id/buttonDot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:height="80dp"
+                android:height="96dp"
                 android:background="@color/Buttons_color1"
-                android:onClick="buttonClick"
+                android:onClick="dotClick"
                 android:text="."
                 android:textColor="#ffff"
                 android:textSize="30dp" />
@@ -89,7 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:background="@color/Buttons_color1"
-                android:onClick="buttonClick"
+                android:onClick="numberClick"
                 android:text="8"
                 android:textColor="#ffff"
                 android:textSize="30dp" />
@@ -99,7 +125,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:background="@color/Buttons_color1"
-                android:onClick="buttonClick"
+                android:onClick="numberClick"
                 android:text="5"
                 android:textColor="#ffff"
                 android:textSize="30dp" />
@@ -109,7 +135,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:background="@color/Buttons_color1"
-                android:onClick="buttonClick"
+                android:onClick="numberClick"
                 android:text="2"
                 android:textColor="#ffff"
                 android:textSize="30dp" />
@@ -117,9 +143,9 @@
             <Button
                 android:id="@+id/button_0"
                 android:layout_width="wrap_content"
-                android:layout_height="80dp"
+                android:layout_height="96dp"
                 android:background="@color/Buttons_color1"
-                android:onClick="buttonClick"
+                android:onClick="numberClick"
                 android:text="0"
                 android:textColor="#ffff"
                 android:textSize="30dp" />
@@ -136,7 +162,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:background="@color/Buttons_color1"
-                android:onClick="buttonClick"
+                android:onClick="numberClick"
                 android:text="9"
                 android:textColor="#ffff"
                 android:textSize="30dp" />
@@ -146,7 +172,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:background="@color/Buttons_color1"
-                android:onClick="buttonClick"
+                android:onClick="numberClick"
                 android:text="6"
                 android:textColor="#ffff"
                 android:textSize="30dp" />
@@ -157,7 +183,7 @@
                 android:layout_height="wrap_content"
                 android:height="80dp"
                 android:background="@color/Buttons_color1"
-                android:onClick="buttonClick"
+                android:onClick="numberClick"
                 android:text="3"
                 android:textColor="#ffff"
                 android:textSize="30dp" />
@@ -166,9 +192,9 @@
                 android:id="@+id/buttonEquals"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:height="80dp"
+                android:height="96dp"
                 android:background="@color/Buttons_color1"
-                android:onClick="buttonClick"
+                android:onClick="equalClick"
                 android:text="="
                 android:textColor="#ffff"
                 android:textSize="30dp" />
@@ -183,19 +209,19 @@
             <Button
                 android:id="@+id/buttonDel"
                 android:layout_width="wrap_content"
-                android:layout_height="64dp"
+                android:layout_height="58dp"
                 android:background="@color/Buttons_color2"
-                android:onClick="buttonClick"
+                android:onClick="deleteClick"
                 android:text="DEL"
                 android:textColor="#ffff"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/buttonDivide"
                 android:layout_width="wrap_content"
-                android:layout_height="64dp"
+                android:layout_height="55dp"
                 android:background="@color/Buttons_color2"
-                android:onClick="buttonClick"
+                android:onClick="operationClick"
                 android:text="/"
                 android:textColor="#ffff"
                 android:textSize="20dp" />
@@ -204,9 +230,9 @@
                 android:id="@+id/buttonMultiply"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:height="64dp"
+                android:height="55dp"
                 android:background="@color/Buttons_color2"
-                android:onClick="buttonClick"
+                android:onClick="operationClick"
                 android:text="x"
                 android:textColor="#ffff"
                 android:textSize="18dp" />
@@ -215,9 +241,9 @@
                 android:id="@+id/buttonSubtraction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:height="64dp"
+                android:height="55dp"
                 android:background="@color/Buttons_color2"
-                android:onClick="buttonClick"
+                android:onClick="substractionOperationClick"
                 android:text="-"
                 android:textColor="#ffff"
                 android:textSize="35dp" />
@@ -226,12 +252,24 @@
                 android:id="@+id/buttonAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:height="64dp"
+                android:height="55dp"
                 android:background="@color/Buttons_color2"
-                android:onClick="buttonClick"
+                android:onClick="operationClick"
                 android:text="+"
                 android:textColor="#ffff"
                 android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/buttonBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:height="58dp"
+                android:background="@color/Buttons_color2"
+                android:onClick="backClick"
+                android:text="back"
+                android:textColor="#ffff"
+                android:textSize="20sp" />
+
         </LinearLayout>
 
     </LinearLayout>
